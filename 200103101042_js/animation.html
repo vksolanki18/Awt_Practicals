@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            width: 600px;
+            height: 600px;
+            background: rgb(236, 91, 13);
+            position: relative;
+        }
+        
+        #box {
+            width: 200px;
+            height: 200px;
+            background: rgb(36, 15, 200);
+            position: absolute;
+        }
+    </style>
+    <title>js Animation</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box"> </div>
+    </div>
+
+    <script>
+        var pos = 0;
+
+        var box = document.getElementById('box');
+        var t = setInterval(ex, 5);
+
+        function ex() {
+            if (pos >= 300) {
+                clearInterval(t);
+            } else {
+                pos += 1;
+                box.style.left = pos + 'px';
+            }
+        }
+    </script>
+</body>
+
+</html>

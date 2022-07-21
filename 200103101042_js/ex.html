@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning js</title>
+</head>
+
+<body>
+    <div id="par">
+        <h1 id="heading1"></h1>
+        <h1 id="heading2"></h1>
+        <h1 id="heading3"></h1>
+    </div>
+    <script>
+        var temp = document.getElementById('heading1');
+
+        var temp2 = document.getElementsByTagName("h1");
+        for (var x = 0; x < temp2.length; x++) {
+            temp2[x].innerHTML = "heading";
+            temp2[x].style.backgroundColor = "#2596be";
+            temp2[x].style.color = "#000000";
+        }
+        temp.innerHTML = 'Heading 1';
+        var parent = document.getElementById("par");
+        var child = document.getElementById("heading2");
+
+        var h1 = document.createElement("h1");
+        var node = document.createTextNode("This is new");
+        h1.appendChild(node);
+        parent.replaceChild(h1, child);
+    </script>
+</body>
+
+</html>

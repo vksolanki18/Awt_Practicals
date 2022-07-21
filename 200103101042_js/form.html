@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+</head>
+
+<body>
+    <form onsubmit="return validate()" method="post">
+        Username : <input type="text" name="username" id="name" />
+        <hr /> password: <input type="text" name="pwd1" id="pwd1" />
+        <hr /> conform password: <input type="text" name="pwd2" id="pwd2" />
+        <hr />
+        <input type="submit" value="Submit" />
+    </form>
+
+
+    <script>
+        function validate() {
+            var u = document.getElementById("name");
+            var n1 = document.getElementById('pwd1');
+            var n2 = document.getElementById('pwd2');
+            if (u.value == "") {
+                alert("Username can not be blank");
+                return false;
+            }
+            if (n1.value != '' && n2.value != '') {
+                if (n1.value == n2.value) {
+                    return true;
+                }
+            }
+            alert("The password values should be equal and not blank");
+            return false;
+        }
+    </script>
+</body>
+
+</html>

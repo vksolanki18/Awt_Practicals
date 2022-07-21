@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event handle</title>
+</head>
+
+<body>
+
+    <button onclick="show();">Click here</button>
+    <p id="date"></p>
+    <input type="text" placeholder="convert to uppercase" id="name" onchange="change()">
+    <hr>
+    <button id="demo">Start</button>
+
+
+    <script>
+        function show() {
+            // alert("Hi there");
+            var date = document.getElementById("date");
+            date.innerHTML = Date();
+        }
+
+        function change() {
+            var x = document.getElementById('name');
+            x.value = x.value.toUpperCase();
+        }
+
+        var btn = document.getElementById("demo");
+        btn.addEventListener("click", myFunction);
+
+        function myFunction() {
+            console.log(Math.random());
+
+            //to only perform the event 1 time
+            btn.removeEventListener("click", myFunction);
+        }
+    </script>
+</body>
+
+</html>
